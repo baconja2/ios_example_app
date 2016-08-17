@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11191" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11156"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,87 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Example, Inc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb0-jQ-SHD">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aW2-Eh-rXj">
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.53117133120000004" green="0.31711186949999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XDM-gn-EUK" kind="presentation" modalTransitionStyle="flipHorizontal" id="kQD-OP-tYM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hb0-jQ-SHD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TnV-Te-KEZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hb0-jQ-SHD" secondAttribute="bottom" constant="20" id="WAO-wI-dC9"/>
+                            <constraint firstItem="aW2-Eh-rXj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XPL-08-XKq"/>
+                            <constraint firstItem="aW2-Eh-rXj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mtV-DM-AbO"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-748" y="82"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="Mmk-gw-tLp">
+            <objects>
+                <viewController id="XDM-gn-EUK" customClass="GameViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DMe-dM-1en"/>
+                        <viewControllerLayoutGuide type="bottom" id="iEi-Gt-5hB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gep-3g-KQK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6R-uJ-FOd">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="222" id="buc-xq-KWp"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ctY-7g-msC" appends="YES" id="VBn-w4-oug"/>
+                                    <outletCollection property="gestureRecognizers" destination="Xix-o8-p8f" appends="YES" id="OFi-CF-R5L"/>
+                                    <outletCollection property="gestureRecognizers" destination="dV3-eY-kqI" appends="YES" id="B60-Uo-UsE"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iEi-Gt-5hB" firstAttribute="top" secondItem="R6R-uJ-FOd" secondAttribute="bottom" id="MIZ-iD-1N5"/>
+                            <constraint firstItem="R6R-uJ-FOd" firstAttribute="leading" secondItem="gep-3g-KQK" secondAttribute="leading" id="ZoM-EK-351"/>
+                            <constraint firstAttribute="trailing" secondItem="R6R-uJ-FOd" secondAttribute="trailing" id="ghE-fw-Rcx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dal-U3-7wH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="ctY-7g-msC" userLabel="Swipe Right">
+                    <connections>
+                        <action selector="swipeRecognized:" destination="XDM-gn-EUK" id="chD-Wc-nLX"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Xix-o8-p8f" userLabel="Swipe Left">
+                    <connections>
+                        <action selector="swipeRecognized:" destination="XDM-gn-EUK" id="iPS-um-gn0"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="dV3-eY-kqI" userLabel="Swipe Down">
+                    <connections>
+                        <action selector="swipeRecognized:" destination="XDM-gn-EUK" id="amY-cO-T6v"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="87.706146926536732"/>
         </scene>
     </scenes>
 </document>
